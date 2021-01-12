@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Boobs.by</title>
+  <style>
+	.Header p {	 
+        margin-top: 0em;
+	    position: relative;
+	    text-align: center;
+	    font-family: 'Times New Roman', Times, serif;
+	    font-size: 5.3vw;        
+	}	
+	.Header p:after{	
+		width: 50%;
+		height: 1px;
+		background-color: black;
+        position: absolute;
+        bottom: -.5em;    
+        left: 0;  
+        content: "";
+        transform: translateX(50%);
+	} 
+
+    .noSelect{
+        user-select: none;
+        -khtml-user-select: none;
+        -o-user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none; 
+    }
+
+    .img_block{
+        position: relative;
+        /*border: 1px solid red;*/
+        color: transparent;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        }
+    .image {    
+        width:70%;
+        /*width:100%;*/
+        height: auto;}
+
+    .info {
+        width:40%;
+        height: auto;}
+
+
+    .leftBtn {
+        position: absolute;
+        top: 43%;
+        left: 28%;
+        background-color: transparent;
+        color: white;
+        border: none;
+        cursor: pointer;
+        outline:none;
+        border-radius: 500px;
+        border-width: 0;
+        height: 21%;
+        width: 11%;
+        }
+
+    .rightBtn {
+        position: absolute;
+        top: 41%;
+        left: 66%;
+        background-color: transparent;
+        color: white;
+        cursor: pointer;
+        border: none;
+        outline:none;
+        border-radius: 500px;        
+        height: 18%;
+        width: 10%;
+    }        
+
+    button:hover {
+        background-color: rgba(249,187,187,0.5);
+    }  
+    button::after {
+        border-width: 10%;
+    }          
+
+    .c-body {
+        padding:0;
+        margin:0;
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        flex-flow: column;
+
+        min-height: 100vh;
+    }
+
+    .c-container   {
+        margin: auto auto;
+        /* display: flex;
+        align-items: center;
+        justify-self: center;
+        flex-flow: column; */
+        /* min-height: 100vh; */
+    }
+
+    .c-rotate {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column;
+        min-height: 100%;
+        width: 100%;
+        text-align: center;
+        background-color: #fff;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 999;
+    }
+
+    .c-rotate>svg {
+        width: 100px;
+        height: 100px;
+    }
+
+    .c-rotate-text {
+        font-size: 7vw;
+        margin-top: .5em;
+    }
+
+
+    @media (orientation: landscape) {
+        
+    }
+    
+    @media (orientation: portrait) {
+        .c-rotate {
+            display: flex;
+        }
+    }
+
+  </style>
+
+  <script>
+    function playPause(song){               
+        if (song.paused && song.currentTime >= 0 && !song.ended) {
+            song.play();            
+        } else {
+            //reset(song);            
+            song.pause();
+        }
+    }
+
+    function reset(song){
+        song.pause();
+        song.currentTime = 0;
+    }
+
+    function PlaySound(melody) {           
+        var aBirthday = document.getElementById('Birthday');
+        var aLaugth = document.getElementById('Laugth');        
+
+        switch (melody) {
+            case '1':      
+                reset(aLaugth);
+                playPause(aBirthday);  
+                break;
+            case '2':
+                reset(aBirthday);
+                playPause(aLaugth);  
+                break;
+            default:
+                break;
+        }              
+    }
+
+   </script>  
+ </head>
+ <body class="c-body">
+    <div class="c-rotate">
+        <svg xmlns:xlink="http://www.w3.org/1999/xlink" height="1012.8105287424" viewBox="0 0 24 24" width="1012.8105287424" id="svgcontent" overflow="hidden" x="159.09473562879998" y="32.09473562879998"><title></title><desc></desc><defs></defs><g style="pointer-events:none"><title style="pointer-events:inherit">background</title><rect x="-1" y="-1" width="582" height="402" id="canvas_background" fill="none" style="pointer-events:inherit"></rect></g><g style="pointer-events:all"><title style="pointer-events:inherit">Layer 1</title><path d="M16.5,2.5 C19.80000000000001,4 22.099999999999994,7.200000000000003 22.5,11 L24,11 C23.400000000000006,4.799999999999997 18.30000000000001,0 12,0 L11.300000000000011,0 L15.099999999999994,3.799999999999997 L16.5,2.5 L16.5,2.5 zM10.199999999999989,1.7000000000000028 C9.599999999999994,1.0999999999999943 8.699999999999989,1.0999999999999943 8.099999999999994,1.7000000000000028 L1.6999999999999886,8.099999999999994 C1.0999999999999943,8.700000000000003 1.0999999999999943,9.599999999999994 1.6999999999999886,10.200000000000003 L13.699999999999989,22.200000000000003 C14.300000000000011,22.799999999999997 15.199999999999989,22.799999999999997 15.800000000000011,22.200000000000003 L22.19999999999999,15.799999999999997 C22.80000000000001,15.200000000000003 22.80000000000001,14.299999999999997 22.19999999999999,13.700000000000003 L10.199999999999989,1.7000000000000028 L10.199999999999989,1.7000000000000028 zM14.800000000000011,21.200000000000003 L2.8000000000000114,9.200000000000003 L9.199999999999989,2.799999999999997 L21.19999999999999,14.799999999999997 L14.800000000000011,21.200000000000003 L14.800000000000011,21.200000000000003 zM7.5,21.5 C4.199999999999989,20 1.9000000000000057,16.799999999999997 1.5,13 L0.09999999999999432,13 C0.5999999999999943,19.200000000000003 5.699999999999989,24 12,24 L12.699999999999989,24 L8.900000000000006,20.200000000000003 L7.5,21.5 L7.5,21.5 z" id="Shape" stroke-dasharray="none"></path></g></svg>
+        <div class="c-rotate-text">Смени ориентацию экрана</div>
+    </div>
+    <div class="c-container">
+        <div class="Header"> 
+        	<p class="noSelect">Happy Birthday</p>
+        </div>
+
+        <div class="img_block noSelect">
+        <img 
+            class="image"                        
+            src="https://drive.google.com/u/0/uc?id=1HukD6xFdrtmt6UVDliAiHmLCNt1B25Fx&export=download"
+            draggable="false">
+        <audio
+            id="Birthday"       
+            src="https://drive.google.com/u/0/uc?id=1ZUS0YY7LVkzJtM40T9lK4YgSja5URk2X&export=download"
+            type="audio/mpeg" 
+            preload="metadata">
+        </audio>      
+        <audio
+            id="Laugth"            
+            src="https://drive.google.com/u/0/uc?id=10-6HRLSBoKvxj2Fq1VWtb-d72ebIp1Iw&export=download"        
+            type="audio/mpeg" 
+            preload="metadata">
+        </audio>               
+            <button class="leftBtn" onclick="PlaySound('1')"></button>    
+            <button class="rightBtn" onclick="PlaySound('2')"></button>    
+        </div>
+    </div>
+
+ </body>
+</html>
