@@ -4,24 +4,6 @@
   <meta charset="utf-8">
   <title>Boobs.by</title>
   <style>   
-	.Header p {	 
-        margin-top: 0em;
-	    position: relative;
-	    text-align: center;
-	    font-family: 'Times New Roman', Times, serif;
-	    font-size: 5.3vw;        
-	}	
-	.Header p:after{	
-		width: 50%;
-		height: 1px;
-		background-color: black;
-        position: absolute;
-        bottom: -.5em;    
-        left: 0;  
-        content: "";
-        transform: translateX(50%);
-	} 
-
     .noSelect{
         user-select: none;
         -khtml-user-select: none;
@@ -43,6 +25,40 @@
         /*width:100%;*/
         height: auto;}
 
+    .Nipple {
+        position: absolute;
+        height: auto;
+
+    }
+    .leftNippleHover{
+        visibility: hidden;
+        top: 56.5%;
+        left:33.1%;
+        width:9.2%;           
+        cursor: pointer;
+    }    
+    
+    .leftNipple{
+        visibility: visible;
+        top: 56.5%;
+        left:33.1%;
+        width:9.2%;          
+    }        
+
+    .rightNipple{    
+        top: 56%;
+        left:61%;
+        width:6.4%;            
+    }
+
+    .rightNippleHover{
+        visibility: hidden;     
+        top: 56%;
+        left:61%;
+        width:6.4%;
+        cursor: pointer;   
+    }    
+
     .info {
         width:30%;
         height: auto;}
@@ -50,8 +66,8 @@
 
     .leftBtn {
         position: absolute;
-        top: 43%;
-        left: 28%;
+        top: 58%;
+        left: 34%;
         background-color: transparent;
         color: white;
         border: none;
@@ -59,22 +75,22 @@
         outline:none;
         border-radius: 500px;
         border-width: 0;
-        height: 21%;
-        width: 11%;
+        height: 15%;
+        width: 8%;
         }
 
     .rightBtn {
         position: absolute;
-        top: 41%;
-        left: 66%;
+        top: 57%;
+        left: 61%;
         background-color: transparent;
         color: white;
         cursor: pointer;
         border: none;
         outline:none;
         border-radius: 500px;        
-        height: 18%;
-        width: 10%;
+        height: 11%;
+        width: 7%;
     }        
 
     button:hover {
@@ -177,6 +193,17 @@
         }              
     }
 
+    function MouseEnter(type){
+        document.getElementById(type + 'NippleHover').style.visibility = 'visible'
+        document.getElementById(type + 'Nipple').style.visibility = 'hidden'
+        
+    }
+    function MouseExit(type){        
+        document.getElementById(type + 'NippleHover').style.visibility = 'hidden';
+        document.getElementById(type + 'Nipple').style.visibility = 'visible';
+    }
+
+
    </script>  
  </head>
  <body class="c-body">
@@ -198,7 +225,37 @@
             <img 
                 class="image"                        
                 src="./boobs_sex.jpg"
-                draggable="false">
+                draggable="false"> 
+
+            <img 
+                id='leftNipple'
+                class="Nipple leftNipple"                        
+                src="./Nipple L.png"
+                draggable="false"
+                onmouseenter = "MouseEnter('left')">    
+
+            <img
+                id='leftNippleHover' 
+                class="Nipple leftNippleHover"                        
+                src="./Nipple L Hover.png"
+                draggable="false"
+                onmouseout="MouseExit('left')"
+                onclick="PlaySound('1')">                                   
+
+            <img id='rightNipple'
+                class="Nipple rightNipple"                        
+                src="./Nipple R.png"
+                draggable="false"
+                onmouseenter = "MouseEnter('right')">   
+
+            <img id='rightNippleHover'
+                class="Nipple rightNippleHover"                        
+                src="./Nipple R Hover.png"
+                draggable="false"
+                onmouseout="MouseExit('right')"
+                onclick="PlaySound('2')">
+                
+
             <audio
                 id="Birthday"       
                 src="./Happy_Birthday.mp3"
@@ -211,10 +268,14 @@
                 src="./Laugth.mp3"        
                 type="audio/mpeg" 
                 preload="auto">
-            </audio>             
-            <button class="leftBtn" onclick="PlaySound('1')"></button>    
-            <button class="rightBtn" onclick="PlaySound('2')"></button>    
+            </audio>            
+            <!--button class="leftBtn" onclick="PlaySound('1')"></button-->    
+            <!--button class="rightBtn" onclick="PlaySound('2')"></button-->
         </div>
+    </div>
+
+    <div>
+
     </div>
 
  </body>
